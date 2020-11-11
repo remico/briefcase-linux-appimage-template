@@ -53,6 +53,7 @@ USER brutus
 # setup additional vars & pre-install python packages for PySide development
 ENV PATH=/home/brutus/.local/bin:$PATH
 RUN python${PY_VERSION} -m pip install pudb PySide2 requests json2xml
+RUN python${PY_VERSION} -m pip install --extra-index-url https://remico.github.com/pypi trim-ps2
 
 CMD ln -s "$(find /app -name python3)" /home/brutus/.local/bin/; \
     SHIBOKEN2="$(find /app -name shiboken2.abi3.so)"; \
